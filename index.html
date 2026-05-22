@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A&A Construction</title>
+  <title>24 Hour Plumbing and Maintainance</title>
 
-  <!-- Google Fonts -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -19,11 +21,11 @@
     }
 
     :root{
-      --primary:#f40000;
-      --dark:#000000;
-      --dark-light:#282828;
+      --primary:#0099ff;
+      --dark:#071120;
+      --dark-light:#102038;
       --white:#ffffff;
-      --gray:#f3f4f6;
+      --gray:#f3f7fb;
       --text:#4b5563;
       --shadow:0 10px 30px rgba(0,0,0,0.12);
     }
@@ -57,7 +59,7 @@
       display:inline-block;
       padding:14px 28px;
       background:var(--primary);
-      color:var(--dark);
+      color:white;
       font-weight:700;
       border-radius:6px;
       transition:0.3s ease;
@@ -70,7 +72,8 @@
       box-shadow:var(--shadow);
     }
 
-    /* NAVBAR */
+    /* HEADER */
+
     header{
       position:fixed;
       width:100%;
@@ -81,7 +84,7 @@
     }
 
     header.scrolled{
-      background:rgba(17,24,39,0.96);
+      background:rgba(7,17,32,0.95);
       backdrop-filter:blur(10px);
       box-shadow:0 5px 20px rgba(0,0,0,0.2);
     }
@@ -94,7 +97,7 @@
     }
 
     .logo{
-      color:var(--white);
+      color:white;
       font-size:1.8rem;
       font-weight:800;
       font-family:'Montserrat', sans-serif;
@@ -111,7 +114,7 @@
     }
 
     .nav-links a{
-      color:var(--white);
+      color:white;
       font-weight:600;
       transition:0.3s;
     }
@@ -135,11 +138,13 @@
     }
 
     /* HERO */
+
     .hero{
       min-height:100vh;
+
       background:
       linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+      url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
 
       display:flex;
       align-items:center;
@@ -183,6 +188,7 @@
     }
 
     /* ABOUT */
+
     .about{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -232,9 +238,6 @@
     }
 
     /* SERVICES */
-    .services{
-      background:white;
-    }
 
     .services-grid{
       display:grid;
@@ -280,6 +283,7 @@
     }
 
     /* PROJECTS */
+
     .projects{
       background:var(--gray);
     }
@@ -304,6 +308,10 @@
       transition:0.5s;
     }
 
+    .project-card:hover img{
+      transform:scale(1.08);
+    }
+
     .project-overlay{
       position:absolute;
       inset:0;
@@ -315,16 +323,13 @@
       color:white;
     }
 
-    .project-card:hover img{
-      transform:scale(1.08);
-    }
-
     .project-overlay h3{
       color:white;
       margin-bottom:10px;
     }
 
     /* WHY US */
+
     .why-us{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -355,66 +360,86 @@
       justify-content:center;
       font-size:1.4rem;
       font-weight:bold;
-      color:var(--dark);
+      color:white;
     }
 
     /* TESTIMONIALS */
+
     .testimonials{
       background:var(--dark);
-      color:white;
+      padding:100px 0;
+      overflow:hidden;
+    }
+
+    .testimonials .section-title{
       text-align:center;
+      margin-bottom:60px;
     }
 
     .testimonials h2{
       color:white;
     }
 
+    .testimonials .section-title p{
+      color:#d1d5db;
+    }
+
     .testimonial-slider{
-      margin-top:60px;
+      width:100%;
+      overflow:hidden;
       position:relative;
-      max-width:900px;
-      margin-inline:auto;
     }
 
-    .testimonial{
-      display:none;
+    .testimonial-track{
+      display:flex;
+      gap:30px;
+      width:max-content;
+      animation:scroll 25s linear infinite;
+    }
+
+    .testimonial-card{
+      width:420px;
+      min-width:420px;
+
       background:rgba(255,255,255,0.06);
-      padding:40px;
-      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.08);
+
+      padding:35px;
+      border-radius:20px;
+
       backdrop-filter:blur(10px);
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
-    .testimonial.active{
-      display:block;
-      animation:fade 0.6s ease;
-    }
-
-    @keyframes fade{
-      from{
-        opacity:0;
-        transform:translateY(10px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    .testimonial p{
-      font-size:1.1rem;
+    .testimonial-card p{
+      color:#f3f4f6;
       line-height:1.9;
-      margin-bottom:25px;
-      color:#e5e7eb;
+      margin-bottom:20px;
+      font-size:1rem;
     }
 
-    .testimonial h4{
+    .testimonial-card h4{
       color:var(--primary);
     }
 
-    /* CONTACT */
-    .contact{
-      background:white;
+    @keyframes scroll{
+
+      0%{
+        transform:translateX(0);
+      }
+
+      100%{
+        transform:translateX(calc(-450px * 3));
+      }
+
     }
+
+    .testimonial-track:hover{
+      animation-play-state:paused;
+    }
+
+    /* CONTACT */
 
     .contact-wrapper{
       display:grid;
@@ -465,6 +490,7 @@
     }
 
     /* FOOTER */
+
     footer{
       background:var(--dark);
       color:#d1d5db;
@@ -473,6 +499,7 @@
     }
 
     /* SCROLL TOP */
+
     .scroll-top{
       position:fixed;
       right:25px;
@@ -480,7 +507,7 @@
       width:50px;
       height:50px;
       background:var(--primary);
-      color:var(--dark);
+      color:white;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -500,6 +527,7 @@
     }
 
     /* RESPONSIVE */
+
     @media(max-width:980px){
 
       .about,
@@ -534,9 +562,33 @@
       .menu-toggle{
         display:flex;
       }
+
+    }
+
+    @media(max-width:768px){
+
+      .testimonial-card{
+        width:300px;
+        min-width:300px;
+        padding:25px;
+      }
+
+      @keyframes scroll{
+
+        0%{
+          transform:translateX(0);
+        }
+
+        100%{
+          transform:translateX(calc(-330px * 3));
+        }
+
+      }
+
     }
 
     @media(max-width:600px){
+
       section{
         padding:80px 6%;
       }
@@ -557,22 +609,29 @@
         width:100%;
         text-align:center;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
+
   <header id="header">
+
     <nav>
-      <div class="logo">A&A<span>Construction</span></div>
+
+      <div class="logo">
+        24 Hour <span>Plumbing</span>
+      </div>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -581,156 +640,202 @@
         <span></span>
         <span></span>
       </div>
+
     </nav>
+
   </header>
 
   <!-- HERO -->
+
   <section class="hero" id="home">
+
     <div class="hero-content">
-      <h1>Building The Future With Precision & Excellence</h1>
+
+      <h1>Fast & Reliable 24 Hour Plumbing Services</h1>
 
       <p>
-        A&A Construction delivers modern commercial, residential, and industrial
-        projects with unmatched quality, innovation, and reliability.
+        24 Hour Plumbing and Maintainance provides emergency plumbing,
+        leak repairs, drain cleaning, geyser installations, and maintenance
+        services day and night for homes and businesses.
       </p>
 
       <div class="hero-buttons">
-        <a href="#contact" class="btn">Get Free Quote</a>
-        <a href="#projects" class="btn btn-outline">View Projects</a>
+        <a href="#contact" class="btn">Call Emergency Team</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
       </div>
+
     </div>
+
   </section>
 
   <!-- ABOUT -->
+
   <section class="about" id="about">
 
     <div>
+
       <div class="section-title">
-        <h2>About A&A Construction</h2>
+
+        <h2>About 24 Hour Plumbing and Maintainance</h2>
 
         <p>
-          We are a premium construction company focused on creating
-          modern infrastructure with world-class workmanship.
-          From luxury homes to large commercial developments,
-          our team ensures every project exceeds expectations.
+          We are a trusted emergency plumbing company delivering fast,
+          professional, and affordable plumbing solutions 24 hours a day.
+          From burst pipes to blocked drains and full plumbing installations,
+          our experienced technicians are always ready to help.
         </p>
+
       </div>
 
       <div class="stats">
 
         <div class="stat-box">
-          <h3>15+</h3>
-          <p>Years Experience</p>
+          <h3>24/7</h3>
+          <p>Emergency Support</p>
         </div>
 
         <div class="stat-box">
-          <h3>240+</h3>
-          <p>Projects Completed</p>
+          <h3>850+</h3>
+          <p>Jobs Completed</p>
         </div>
 
         <div class="stat-box">
-          <h3>98%</h3>
-          <p>Client Satisfaction</p>
+          <h3>99%</h3>
+          <p>Customer Satisfaction</p>
         </div>
 
       </div>
+
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop" alt="">
+      <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop" alt="">
     </div>
 
   </section>
 
   <!-- SERVICES -->
+
   <section class="services" id="services">
 
     <div class="section-title">
-      <h2>Our Services</h2>
+      <h2>Our Plumbing Services</h2>
+
       <p>
-        Comprehensive construction solutions tailored to residential,
-        commercial, and industrial projects.
+        Professional residential and commercial plumbing solutions available 24/7.
       </p>
     </div>
 
     <div class="services-grid">
 
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=2070&auto=format&fit=crop" alt="">
 
         <div class="service-content">
-          <div class="service-icon">🏢</div>
-          <h3>Commercial Construction</h3>
+
+          <div class="service-icon">🚰</div>
+
+          <h3>Emergency Plumbing</h3>
+
           <p>
-            Office buildings, shopping centers, and business infrastructure
-            built with efficiency and durability.
+            Rapid response for burst pipes, leaks, overflows,
+            and urgent plumbing emergencies anytime.
           </p>
+
         </div>
+
       </div>
 
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?q=80&w=2070&auto=format&fit=crop" alt="">
 
         <div class="service-content">
-          <div class="service-icon">🏠</div>
-          <h3>Residential Projects</h3>
+
+          <div class="service-icon">🛠️</div>
+
+          <h3>Pipe Repairs & Installations</h3>
+
           <p>
-            Luxury homes and residential developments designed
-            with modern architecture and comfort.
+            Professional pipe replacements, repairs,
+            bathroom plumbing, and kitchen installations.
           </p>
+
         </div>
+
       </div>
 
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop" alt="">
 
         <div class="service-content">
-          <div class="service-icon">⚙️</div>
-          <h3>Industrial Development</h3>
+
+          <div class="service-icon">🔥</div>
+
+          <h3>Geyser Services</h3>
+
           <p>
-            Industrial facilities and warehouses engineered for
-            performance, safety, and scalability.
+            Geyser repairs, replacements, installations,
+            and hot water system maintenance.
           </p>
+
         </div>
+
       </div>
 
     </div>
+
   </section>
 
   <!-- PROJECTS -->
+
   <section class="projects" id="projects">
 
     <div class="section-title">
-      <h2>Featured Projects</h2>
+
+      <h2>Recent Plumbing Work</h2>
+
       <p>
-        A showcase of our recent construction and development work.
+        A showcase of recent plumbing installations and emergency repairs.
       </p>
+
     </div>
 
     <div class="project-grid">
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop" alt="">
+
         <div class="project-overlay">
-          <h3>Skyline Corporate Tower</h3>
-          <p>Modern commercial office development.</p>
+          <h3>Commercial Pipe Repair</h3>
+          <p>Emergency plumbing restoration project.</p>
         </div>
+
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2070&auto=format&fit=crop" alt="">
+
         <div class="project-overlay">
-          <h3>Luxury Residential Estate</h3>
-          <p>Premium residential architecture.</p>
+          <h3>Luxury Bathroom Installation</h3>
+          <p>Modern residential plumbing installation.</p>
         </div>
+
       </div>
 
       <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="">
+
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2070&auto=format&fit=crop" alt="">
+
         <div class="project-overlay">
-          <h3>Industrial Expansion Hub</h3>
-          <p>Large-scale industrial infrastructure.</p>
+          <h3>24 Hour Emergency Service</h3>
+          <p>Fast-response plumbing maintenance solutions.</p>
         </div>
+
       </div>
 
     </div>
@@ -738,46 +843,54 @@
   </section>
 
   <!-- WHY US -->
+
   <section class="why-us">
 
     <div>
-      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1974&auto=format&fit=crop" alt="" style="border-radius:16px; box-shadow:var(--shadow);">
+      <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2070&auto=format&fit=crop"
+      alt=""
+      style="border-radius:16px; box-shadow:var(--shadow);">
     </div>
 
     <div>
 
       <div class="section-title">
+
         <h2>Why Choose Us?</h2>
 
         <p>
-          Our commitment to quality, innovation, and client satisfaction
-          sets us apart in the construction industry.
+          We provide fast, affordable, and professional plumbing
+          services backed by experienced technicians and reliable support.
         </p>
+
       </div>
 
       <div class="features">
 
         <div class="feature">
           <div class="feature-icon">✓</div>
+
           <div>
-            <h3>Expert Team</h3>
-            <p>Highly experienced engineers, architects, and project managers.</p>
+            <h3>24 Hour Emergency Response</h3>
+            <p>Available day and night for urgent plumbing problems.</p>
           </div>
         </div>
 
         <div class="feature">
           <div class="feature-icon">✓</div>
+
           <div>
-            <h3>On-Time Delivery</h3>
-            <p>Efficient project management ensuring deadlines are met.</p>
+            <h3>Qualified Technicians</h3>
+            <p>Experienced plumbing specialists delivering quality workmanship.</p>
           </div>
         </div>
 
         <div class="feature">
           <div class="feature-icon">✓</div>
+
           <div>
-            <h3>Premium Quality</h3>
-            <p>Using top-tier materials and modern construction standards.</p>
+            <h3>Affordable Pricing</h3>
+            <p>Transparent pricing with no hidden costs or surprises.</p>
           </div>
         </div>
 
@@ -788,39 +901,69 @@
   </section>
 
   <!-- TESTIMONIALS -->
+
   <section class="testimonials">
 
     <div class="section-title">
+
       <h2>What Clients Say</h2>
+
       <p>
-        Trusted by businesses and homeowners for exceptional construction solutions.
+        Trusted by homeowners and businesses for fast plumbing solutions.
       </p>
+
     </div>
 
     <div class="testimonial-slider">
 
-      <div class="testimonial active">
-        <p>
-          “A&A Construction transformed our vision into reality. Their professionalism,
-          communication, and quality were outstanding from start to finish.”
-        </p>
-        <h4>— Michael Anderson</h4>
-      </div>
+      <div class="testimonial-track">
 
-      <div class="testimonial">
-        <p>
-          “One of the best construction teams we've worked with.
-          The project was completed ahead of schedule and exceeded expectations.”
-        </p>
-        <h4>— Sarah Williams</h4>
-      </div>
+        <div class="testimonial-card">
+          <p>
+            “Excellent emergency plumbing service. They arrived within 30 minutes
+            and fixed our burst pipe immediately.”
+          </p>
+          <h4>— Sarah M.</h4>
+        </div>
 
-      <div class="testimonial">
-        <p>
-          “Exceptional craftsmanship and attention to detail.
-          Highly recommended for large commercial developments.”
-        </p>
-        <h4>— Daniel Roberts</h4>
+        <div class="testimonial-card">
+          <p>
+            “Professional, affordable, and available late at night when we needed help most.”
+          </p>
+          <h4>— David K.</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            “Highly recommended for geyser installations and plumbing maintenance.”
+          </p>
+          <h4>— Michael T.</h4>
+        </div>
+
+        <!-- DUPLICATES -->
+
+        <div class="testimonial-card">
+          <p>
+            “Excellent emergency plumbing service. They arrived within 30 minutes
+            and fixed our burst pipe immediately.”
+          </p>
+          <h4>— Sarah M.</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            “Professional, affordable, and available late at night when we needed help most.”
+          </p>
+          <h4>— David K.</h4>
+        </div>
+
+        <div class="testimonial-card">
+          <p>
+            “Highly recommended for geyser installations and plumbing maintenance.”
+          </p>
+          <h4>— Michael T.</h4>
+        </div>
+
       </div>
 
     </div>
@@ -828,13 +971,17 @@
   </section>
 
   <!-- CONTACT -->
+
   <section class="contact" id="contact">
 
     <div class="section-title">
-      <h2>Get In Touch</h2>
+
+      <h2>Need Emergency Plumbing Help?</h2>
+
       <p>
-        Let's discuss your next construction project.
+        Contact our 24 hour plumbing team today.
       </p>
+
     </div>
 
     <div class="contact-wrapper">
@@ -842,27 +989,36 @@
       <div class="contact-info">
 
         <div class="info-box">
+
           <div style="font-size:2rem;">📍</div>
+
           <div>
-            <h3>Office Location</h3>
-            <p>Johannesburg, South Africa</p>
+            <h3>Service Area</h3>
+            <p>Johannesburg & Surrounding Areas</p>
           </div>
+
         </div>
 
         <div class="info-box">
+
           <div style="font-size:2rem;">📞</div>
+
           <div>
-            <h3>Phone Number</h3>
-            <p>+27 11 555 1234</p>
+            <h3>Emergency Number</h3>
+            <p>+27 11 555 9876</p>
           </div>
+
         </div>
 
         <div class="info-box">
+
           <div style="font-size:2rem;">✉️</div>
+
           <div>
             <h3>Email Address</h3>
-            <p>info@A&A Construction.co.za</p>
+            <p>info@24hourplumbing.co.za</p>
           </div>
+
         </div>
 
       </div>
@@ -878,14 +1034,16 @@
         </div>
 
         <div class="input-group">
-          <input type="text" placeholder="Project Type">
+          <input type="text" placeholder="Service Needed">
         </div>
 
         <div class="input-group">
-          <textarea placeholder="Tell us about your project"></textarea>
+          <textarea placeholder="Tell us about your plumbing issue"></textarea>
         </div>
 
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit" class="btn">
+          Send Message
+        </button>
 
       </form>
 
@@ -894,30 +1052,37 @@
   </section>
 
   <!-- FOOTER -->
+
   <footer>
     <p>
-      © 2026 A&A Construction. All Rights Reserved.
+      © 2026 24 Hour Plumbing and Maintainance. All Rights Reserved.
     </p>
   </footer>
 
   <!-- SCROLL TOP -->
+
   <div class="scroll-top" id="scrollTop">
     ↑
   </div>
 
   <script>
+
     // HEADER SCROLL EFFECT
+
     const header = document.getElementById('header');
 
     window.addEventListener('scroll', () => {
+
       if(window.scrollY > 50){
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
+
     });
 
     // MOBILE MENU
+
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -925,47 +1090,32 @@
       navLinks.classList.toggle('active');
     });
 
-    // CLOSE MENU ON LINK CLICK
+    // CLOSE MENU
+
     document.querySelectorAll('.nav-links a').forEach(link => {
+
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
+
     });
 
-    // TESTIMONIAL SLIDER
-    const testimonials = document.querySelectorAll('.testimonial');
-    let currentTestimonial = 0;
-
-    function showTestimonial(index){
-      testimonials.forEach(testimonial => {
-        testimonial.classList.remove('active');
-      });
-
-      testimonials[index].classList.add('active');
-    }
-
-    setInterval(() => {
-      currentTestimonial++;
-
-      if(currentTestimonial >= testimonials.length){
-        currentTestimonial = 0;
-      }
-
-      showTestimonial(currentTestimonial);
-    }, 5000);
-
     // CONTACT FORM
+
     const contactForm = document.getElementById('contactForm');
 
     contactForm.addEventListener('submit', (e) => {
+
       e.preventDefault();
 
       alert('Thank you! Your message has been sent successfully.');
 
       contactForm.reset();
+
     });
 
-    // SCROLL TOP BUTTON
+    // SCROLL TOP
+
     const scrollTopBtn = document.getElementById('scrollTop');
 
     window.addEventListener('scroll', () => {
@@ -979,13 +1129,16 @@
     });
 
     scrollTopBtn.addEventListener('click', () => {
+
       window.scrollTo({
         top:0,
         behavior:'smooth'
       });
+
     });
 
     // REVEAL ANIMATION
+
     const revealElements = document.querySelectorAll(
       '.service-card, .project-card, .feature, .stat-box, .info-box'
     );
@@ -1006,11 +1159,13 @@
     });
 
     revealElements.forEach(el => {
+
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'all 0.7s ease';
 
       observer.observe(el);
+
     });
 
   </script>
